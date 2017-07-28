@@ -361,7 +361,7 @@ shinyUI(
                                       p("Yeomans, K. and Golder, P. 1982. “The Guttman-Kaiser Criterion as a Predictor of the Number of Common Factors,” Journal of the Royal Statistical Society. Series D (The Statistician), Vol. 31: Iss. 3."),
                                       p("DiStefano, C.; Zhu, M.; and Mindrila, D. 2009. \"Understanding and Using Factor Scores: Considerations for the Applied Researcher,\" Practical Assessment, Research & Evaluation, Vol.14 : Iss. 20"),
                                       h3("Data Gathered From:"),
-                                      p("Center for Disease Control and Prevention, US Census Bureau, Federal Communications Commision, Bureau of Transportation"),
+                                      p("Center for Disease Control and Prevention, US Census Bureau, Federal Communications Commision, Bureau of Transportation","Federal Emergency Management Association"),
                                       br(),
                                       h5("Acknowledgements", style = "color:#2471A3"),
                                       p("Bootswatch, Mapbox, OpenStreetMap, ESRI"),
@@ -392,17 +392,17 @@ shinyUI(
                                       h3("More information about Community Resilience Planning at NIST", style = "color:#2471A3"),
                                       hr(style = "color:#2471A3"),
                                       p("NIST Community Resilience:",
-                                        a("https://www.nist.gov/topics/community-resilience")),
+                                      a("https://www.nist.gov/topics/community-resilience", href = "https://www.nist.gov/topics/community-resilience")),
                                       p(em("Community Resilience Economic Decision Guide for Buildings and Infrastructure Systems (EDG):"),
-                                        a("http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1197.pdf")),
+                                      a("http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1197.pdf", href = "https://www.nist.gov/topics/community-resilience")),
                                       p(em("Community Resilience Economic Guide Brochure: "),
-                                        a("https://www.nist.gov/sites/default/files/documents/2017/01/23/nist_communityresilience_brochure-11b_finaldec2016.pdf"))
+                                      a("https://www.nist.gov/sites/default/files/documents/2017/01/23/nist_communityresilience_brochure-11b_finaldec2016.pdf", href = "https://www.nist.gov/topics/community-resilience"))
                                       
+                                      )
                                     )
-                      )
-             ),
+                      ),
              
-             conditionalPanel("false", icon("crosshair"))
+                       conditionalPanel("false", icon("crosshair"))
   )
 )
 
@@ -431,7 +431,7 @@ shinyServer(function(input, output,session) {
     leafletProxy("map") %>% setView(lng = -99.67, lat = 38.93, zoom = 4)
   })      
   
-  
+
   #observations for coloring the indices map
   observe({
     colorBy <- input$color
@@ -448,7 +448,7 @@ shinyServer(function(input, output,session) {
                 layerId="colorLegend")
     
     #If hazard multiplier is selected, the score is multiplied with the associated hazard score
-    if(input$hazrisk){
+        if(input$hazrisk){
       colorBy <- input$color
       
       colorData <- countydatamap[[colorBy]] * countydatamap$PDDscore
@@ -497,7 +497,7 @@ shinyServer(function(input, output,session) {
           addProviderTiles(providers$Esri.WorldImagery,
                            options = providerTileOptions(opacity = 0.35)) %>%
           addPolygons(data = counties, fillOpacity = 0.75, fillColor= paldiff(colorDatadiff),
-                      color = "black", weight = 0.5,label = ~paste0(Location, ": ", formatC(diffdf))) %>%
+                      color = "black", weight = 0.5,label = ~paste0(Location, ": ", formatC(colorDatadiff))) %>%
           addLegend("bottomleft", pal=paldiff, values=colorDatadiff, layerId="colorLegend") %>%
           setView(lng = -99.67, lat = 38.93, zoom = 4) 
       })
@@ -511,7 +511,7 @@ shinyServer(function(input, output,session) {
     leafletProxy("diffmap") %>% setView(lng = -99.67, lat = 38.93, zoom = 4)
   })    
   
-  
+
   #data table output with selection based on states then counties
   output$indextable <- DT::renderDataTable({
     df <- countydatatable %>%
@@ -565,8 +565,8 @@ shinyServer(function(input, output,session) {
     
     if(input$line)
       sprintf(
-        "The correlation value between %s 
-        and %s is %.5f",xchoice, ychoice, corval)
+    "The correlation value between %s 
+            and %s is %.5f",xchoice, ychoice, corval)
   })
   
   #outputting r-squared dependent upon the linear regression line box
@@ -589,7 +589,7 @@ shinyServer(function(input, output,session) {
     if(input$line)
       sprintf(
         "The R-squared value between %s 
-        and %s is %.5f",xchoice, ychoice, rsq)
+            and %s is %.5f",xchoice, ychoice, rsq)
     
   })
 })
