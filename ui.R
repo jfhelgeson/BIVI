@@ -267,7 +267,7 @@ shinyUI(
                                       p("Yeomans, K. and Golder, P. 1982. “The Guttman-Kaiser Criterion as a Predictor of the Number of Common Factors,” Journal of the Royal Statistical Society. Series D (The Statistician), Vol. 31: Iss. 3."),
                                       p("DiStefano, C.; Zhu, M.; and Mindrila, D. 2009. \"Understanding and Using Factor Scores: Considerations for the Applied Researcher,\" Practical Assessment, Research & Evaluation, Vol.14 : Iss. 20"),
                                       h3("Data Gathered From:"),
-                                      p("Center for Disease Control and Prevention, US Census Bureau, Federal Communications Commision, Bureau of Transportation"),
+                                      p("Center for Disease Control and Prevention, US Census Bureau, Federal Communications Commision, Bureau of Transportation","Federal Emergency Management Association"),
                                       br(),
                                       h5("Acknowledgements", style = "color:#2471A3"),
                                       p("Bootswatch, Mapbox, OpenStreetMap, ESRI"),
@@ -298,11 +298,11 @@ shinyUI(
                                       h3("More information about Community Resilience Planning at NIST", style = "color:#2471A3"),
                                       hr(style = "color:#2471A3"),
                                       p("NIST Community Resilience:",
-                                      a("https://www.nist.gov/topics/community-resilience")),
+                                      a("https://www.nist.gov/topics/community-resilience", href = "https://www.nist.gov/topics/community-resilience")),
                                       p(em("Community Resilience Economic Decision Guide for Buildings and Infrastructure Systems (EDG):"),
-                                      a("http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1197.pdf")),
+                                      a("http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1197.pdf", href = "https://www.nist.gov/topics/community-resilience")),
                                       p(em("Community Resilience Economic Guide Brochure: "),
-                                      a("https://www.nist.gov/sites/default/files/documents/2017/01/23/nist_communityresilience_brochure-11b_finaldec2016.pdf"))
+                                      a("https://www.nist.gov/sites/default/files/documents/2017/01/23/nist_communityresilience_brochure-11b_finaldec2016.pdf", href = "https://www.nist.gov/topics/community-resilience"))
                                       
                                       )
                                     )
