@@ -87,7 +87,7 @@ shinyServer(function(input, output,session) {
           addProviderTiles(providers$Esri.WorldImagery,
                            options = providerTileOptions(opacity = 0.35)) %>%
           addPolygons(data = counties, fillOpacity = 0.75, fillColor= paldiff(colorDatadiff),
-                      color = "black", weight = 0.5,label = ~paste0(Location, ": ", formatC(diffdf))) %>%
+                      color = "black", weight = 0.5,label = ~paste0(Location, ": ", formatC(colorDatadiff))) %>%
           addLegend("bottomleft", pal=paldiff, values=colorDatadiff, layerId="colorLegend") %>%
           setView(lng = -99.67, lat = 38.93, zoom = 4) 
       })
