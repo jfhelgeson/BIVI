@@ -1,6 +1,6 @@
-<strong>Vulnerability Indices R Shiny App
+<strong>Vulnerability Indices R Shiny App</strong>
 
-<em>Disclaimer: R or RStudio must be installed in order to run this app.
+<em>Disclaimer: R or RStudio must be installed in order to run this app.</em>
 
 This project can currently be run by downloading a zipped file or running a command
 directly from the console of R. After downloading the zipped file, please extract
