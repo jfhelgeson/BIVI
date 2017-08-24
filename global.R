@@ -19,6 +19,8 @@ if (!require(ggplot2))
   install.packages("ggplot2")
 if (!require(colorRamps))
   install.packages("colorRamps")
+if (!require(DT))
+  install.packages("DT")
 
 
 #### Packages #####################
